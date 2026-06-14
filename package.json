@@ -1,0 +1,15 @@
+{
+  "name": "saizeriya-gacha",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot src/index.ts",
+    "build": "bun build ./src/index.html --outdir=dist --target=browser --minify",
+    "start": "NODE_ENV=production bun src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "wrangler": "^4"
+  }
+}

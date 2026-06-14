@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サイゼリヤ 1000円ガチャ</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>サイゼリヤ 1000円ガチャ</h1>
+  <p>メニューをランダムに組み合わせて1000円以内の食事を提案</p>
+  <div class="user-info" id="userInfo" style="display:none">
+    <span class="name" id="userNameDisplay"></span>
+    <span class="excluded-badge" id="excludedBadge"></span>
+    <button class="edit-link" id="editSettingsBtn">設定を変更</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="alcohol-bar">
+    <label>お酒</label>
+    <div class="toggle-wrap">
+      <button class="toggle-btn active" id="noAlcohol">なし</button>
+      <button class="toggle-btn" id="yesAlcohol">あり</button>
+    </div>
+  </div>
+
+  <div class="gacha-area">
+    <div class="gacha-machine" id="gachaMachine">
+      <div class="gacha-inner">
+        <div class="yen">¥</div>
+        <div class="label">GACHA</div>
+      </div>
+    </div>
+    <button class="gacha-btn" id="gachaBtn">ガチャを回す</button>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-header">
+      <span class="badge">あなたの組み合わせ</span>
+      <span class="total" id="totalDisplay">¥0</span>
+    </div>
+    <div class="result-items" id="resultItems"></div>
+    <div class="result-summary">
+      <div class="summary-text" id="summaryText"></div>
+    </div>
+  </div>
+
+  <div class="footer">データは2025年5月時点のサイゼリヤメニューを基にしています</div>
+</div>
+
+<div id="settingsOverlay" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>設定</h2>
+    <div class="field">
+      <label for="nameInput">あなたの名前</label>
+      <input type="text" id="nameInput" placeholder="名前を入力" maxlength="20">
+    </div>
+    <div class="field">
+      <label>食べられないメニュー</label>
+      <div class="search-wrap">
+        <input type="text" id="itemSearch" placeholder="メニュー名で検索して追加" autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <div class="excluded-tags" id="excludedTags"></div>
+    </div>
+    <button class="save-btn" id="saveSettingsBtn">保存してガチャを始める</button>
+  </div>
+</div>
+
+<script src="./menu.js"></script>
+<script src="./gacha.js"></script>
+<script src="./settings.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
